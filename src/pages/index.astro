@@ -1,16 +1,28 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <BaseHead title="Home" />
+  </head>
+  <body>
+    <Header />
+    <div class="paragraph">
+      I like building <a>software</a>, listening to <a>music</a>, playing <a
+        >games</a
+      >, and learning about <a>programming languages</a>, <a>math</a>, and <a
+        >web development</a
+      >.
+    </div>
+    <div class="paragraph">
+      Right now, I'm a co-op software developer at <a>Avalon Holographics</a>,
+      and I'm completing my bachelor's degree in computer science at <a
+        >Memorial University of Newfoundland and Labrador</a
+      >.
+    </div>
+  </body>
 </html>

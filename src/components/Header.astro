@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import "../styles/header.css";
+
+const navButtons = [
+  {
+    label: "PROJECTS",
+    icon: "fa-solid fa-screwdriver-wrench",
+  },
+  {
+    label: "BLOG",
+    icon: "fa-solid fa-pen",
+  },
+  {
+    label: "CONTACT",
+    icon: "fa-solid fa-comment",
+  },
+];
+---
+
+<div class="name-text">Ethan Denny</div>
+<div class="nav-button-container">
+  {
+    navButtons.map(({ label, icon }) => (
+      <div class="nav-button">
+        <i class={`nav-button-icon ${icon}`} />
+        <span class="nav-button-text">{label}</span>
+      </div>
+    ))
+  }
+</div>

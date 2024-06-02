@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 24px 36px 24px;
+}
+
+@layer components {
+  .name-text {
+    @apply text-green;
+    @apply mb-10 md:mb-12;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 80px;
+  }
+  .nav-button-container {
+    @apply flex-col sm:flex-row;
+    display: inline-flex;
+  }
+  .nav-button {
+    @apply text-green;
+    @apply bg-pink;
+    @apply w-60 md:w-min;
+    @apply mb-3 md:mb-5;
+    @apply justify-center md:justify-normal;
+    align-items: center;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    height: 4.5rem;
+    margin-bottom: 1.25rem;
+    margin-right: 1.25rem;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: width 0.2s;
+  }
+  .nav-button-icon {
+    font-size: 32px;
+    margin-right: 1rem;
+  }
+  .nav-button-text {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: -4px;
+  }
+}

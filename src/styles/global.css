@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white;
+    padding: 0 8rem 8rem;
+  }
+}
+
+@layer components {
+  .paragraph {
+    @apply mb-6 md:mb-10;
+    @apply mt-3 md:mt-4;
+    @apply text-black;
+    font-size: 32px;
+    font-weight: 450;
+    max-width: 824px;
+  }
+  .paragraph > a {
+    @apply text-red;
+    text-decoration: underline;
+  }
+}
