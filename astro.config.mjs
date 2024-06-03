@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ethandenny.dev",
   integrations: [tailwind()],
   markdown: {
     rehypePlugins: [
