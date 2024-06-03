@@ -7,8 +7,8 @@ export default {
       pink: "#f9a3aa",
       red: "#f5576c",
       green: "#004953",
-      blue: "0f282f",
-      black: "070d0d",
+      blue: "#0f282f",
+      black: "#070d0d",
     },
     fontFamily: {
       sans: ["Familjen Grotesk", "sans-serif"],

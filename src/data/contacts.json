@@ -1,0 +1,22 @@
+[
+    {
+      "name": "me@ethandenny.dev",
+      "icon": "fa-solid fa-envelope",
+      "link": "mailto:me@ethandenny.dev"
+    },
+    {
+      "name": "Github",
+      "icon": "fa-brands fa-github",
+      "link": "https://github.com/EthanDenny"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "fa-brands fa-linkedin",
+      "link": "https://www.linkedin.com/in/ethan-denny-709/"
+    },
+    {
+      "name": "Twitter",
+      "icon": "fa-brands fa-twitter",
+      "link": "https://x.com/EthanDenny"
+    }
+]

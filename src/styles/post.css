@@ -2,29 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-white;
-    padding: 0 8rem 8rem;
-  }
-}
-
 @layer components {
-  .prose,
+  p,
+  .paragraph,
   .link {
     font-size: 32px;
   }
-  .prose {
+  p,
+  .paragraph {
+    @apply mb-6 md:mb-8;
     @apply text-black;
     font-weight: 450;
-    width: 100%;
     max-width: 768px;
   }
-  .prose > p {
-    @apply mb-6 md:mb-8;
-    @apply text-justify;
-  }
-  .prose > * > a,
   .link {
     @apply text-red;
     text-decoration: underline;

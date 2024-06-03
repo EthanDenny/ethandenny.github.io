@@ -6,26 +6,29 @@ const navButtons = [
   {
     label: "PROJECTS",
     icon: "fa-solid fa-screwdriver-wrench",
+    link: "/projects",
   },
   {
     label: "BLOG",
     icon: "fa-solid fa-pen",
+    link: "/blog",
   },
   {
     label: "CONTACT",
     icon: "fa-solid fa-comment",
+    link: "/contact",
   },
 ];
 ---
 
-<div class="name-text">Ethan Denny</div>
+<a class="name-text" href="/">Ethan Denny</a>
 <div class="nav-button-container">
   {
-    navButtons.map(({ label, icon }) => (
-      <div class="nav-button">
+    navButtons.map(({ label, icon, link }) => (
+      <a class="nav-button" href={link}>
         <i class={`nav-button-icon ${icon}`} />
         <span class="nav-button-text">{label}</span>
-      </div>
+      </a>
     ))
   }
 </div>

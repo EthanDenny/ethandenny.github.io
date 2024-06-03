@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+
+import "../../styles/global.css";
+import "../../styles/post.css";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry: any) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry }: any = Astro.props;
+const { Content } = await entry.render();
+---
+
+<html>
+  <head>
+    <BaseHead title={entry.data.title} />
+  </head>
+  <body>
+    <div class="flex flex-col items-center">
+      <Header />
+      <div class="prose">
+        <h1>{entry.data.title}</h1>
+        <p class="text-left w-full">
+          Written on: {entry.data.date.toLocaleDateString("en-ca")}
+        </p>
+        <Content />
+      </div>
+    </div>
+  </body>
+</html>

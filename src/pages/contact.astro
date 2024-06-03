@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewTab from "../components/NewTab.astro";
+
+import contacts from "../data/contacts.json";
+---
+
+<BaseLayout title="Contact">
+  <div class="prose flex flex-col">
+    <h3 class="mb-4">
+      I'd love to chat. Reach out to me at any of these places!
+    </h3>
+    {
+      contacts.map(({ name, icon, link }) => (
+        <div>
+          <i class={`${icon} mr-4`} />
+          <NewTab href={link}>{name}</NewTab>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

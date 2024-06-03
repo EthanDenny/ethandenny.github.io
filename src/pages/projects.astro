@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ListItem from "../components/ListItem.astro";
+
+import projects from "../data/projects.json";
+---
+
+<BaseLayout title="Projects">
+  <div class="prose flex flex-col">
+    <h2 class="mb-4">
+      I like to make things; here's some of my favourites. Links go to a blog
+      post if I've written about it, or directly to the repo if not.
+    </h2>
+    {
+      projects.map(({ year, links }) => (
+        <div class="prose mb-8">
+          <h3>{year}</h3>
+          <>
+            {links.map(({ name, description, link, wip }) => (
+              <div class="prose mt-4">
+                <ListItem>
+                  <a href={link} rel="noopener noreferrer">
+                    {wip ? `${name} (work in progress)` : name}
+                  </a>
+                </ListItem>
+                <h4 class="ml-8" set:html={description} />
+              </div>
+            ))}
+          </>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

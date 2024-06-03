@@ -1,0 +1,22 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} />
+  </head>
+  <body>
+    <div class="flex flex-col items-center">
+      <Header />
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,28 +1,39 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewTab from "../components/NewTab.astro";
 
-import "../styles/global.css";
+const softwareLink = "https://github.com/EthanDenny";
+const musicLink =
+  "https://music.apple.com/ca/playlist/ten-really-good-songs/pl.u-V9D7mX9hBKWDNE7";
+const gamesLink = "https://steamcommunity.com/id/thedenny709";
+const programmingLink = "https://github.com/EthanDenny/yap";
+const mathLink =
+  "https://github.com/EthanDenny/visual-computing-course-project";
+const webDevLink = "https://github.com/EthanDenny/do-it-hackathon";
+
+const workLink = "https://www.avalonholographics.com/";
+const schoolLink = "https://www.mun.ca/";
+const sideJobLink =
+  "https://www.linkedin.com/posts/ethan-denny-709_im-happy-to-share-that-in-addition-to-my-activity-7200540631662772224-JMbU?utm_source=share&utm_medium=member_desktop";
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title="Home" />
-  </head>
-  <body>
-    <Header />
-    <div class="paragraph">
-      I like building <a>software</a>, listening to <a>music</a>, playing <a
-        >games</a
-      >, and learning about <a>programming languages</a>, <a>math</a>, and <a
-        >web development</a
-      >.
-    </div>
-    <div class="paragraph">
-      Right now, I'm a co-op software developer at <a>Avalon Holographics</a>,
-      and I'm completing my bachelor's degree in computer science at <a
-        >Memorial University of Newfoundland and Labrador</a
-      >.
-    </div>
-  </body>
-</html>
+<BaseLayout title="Home">
+  <p>
+    I like building <NewTab href={softwareLink}>software</NewTab>, listening to <NewTab
+      href={musicLink}>music</NewTab
+    >, playing <NewTab href={gamesLink}>games</NewTab>, and learning about <NewTab
+      href={programmingLink}>programming languages</NewTab
+    >, <NewTab href={mathLink}>math</NewTab>, and <NewTab href={webDevLink}
+      >web development</NewTab
+    >.
+  </p>
+  <p>
+    Right now, I'm a co-op software developer at <NewTab href={workLink}
+      >Avalon Holographics</NewTab
+    >, and I'm completing my bachelor's degree in computer science at <NewTab
+      href={schoolLink}>Memorial University of Newfoundland and Labrador</NewTab
+    >, where I'm working on <NewTab href={sideJobLink}
+      >cryptographic research</NewTab
+    >.
+  </p>
+</BaseLayout>

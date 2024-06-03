@@ -9,39 +9,38 @@ body {
 @layer components {
   .name-text {
     @apply text-green;
-    @apply mb-10 md:mb-12;
-    font-size: 80px;
+    display: block;
+    font-size: 64px;
     font-weight: 700;
     line-height: 80px;
   }
   .nav-button-container {
     @apply flex-col sm:flex-row;
+    @apply mb-5 md:mb-8;
+    @apply mt-6 md:mt-8;
     display: inline-flex;
+    max-width: 768px;
+    width: 100%;
+    gap: 1.25rem;
   }
   .nav-button {
-    @apply text-green;
     @apply bg-pink;
-    @apply w-60 md:w-min;
-    @apply mb-3 md:mb-5;
-    @apply justify-center md:justify-normal;
+    @apply text-green;
+    @apply w-60 md:w-1/3;
+    justify-content: center;
     align-items: center;
     border-radius: 0.75rem;
-    cursor: pointer;
     display: inline-flex;
     flex-direction: row;
-    height: 4.5rem;
-    margin-bottom: 1.25rem;
-    margin-right: 1.25rem;
+    font-size: 28px;
     overflow: hidden;
-    padding: 0 1.25rem;
+    padding: 0.75rem 1.5rem;
     transition: width 0.2s;
   }
   .nav-button-icon {
-    font-size: 32px;
     margin-right: 1rem;
   }
   .nav-button-text {
-    font-size: 32px;
     font-weight: 600;
     margin-top: -4px;
   }

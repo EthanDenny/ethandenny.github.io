@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ListItem from "../components/ListItem.astro";
+
+const blogEntries = await getCollection("blog");
+---
+
+<BaseLayout title="Blog">
+  {
+    blogEntries.map((entry: any) => (
+      <ListItem>
+        <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
+      </ListItem>
+    ))
+  }
+</BaseLayout>
