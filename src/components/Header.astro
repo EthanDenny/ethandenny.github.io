@@ -26,15 +26,20 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = "/" + pathname.slice(1);
 ---
 
-<nav class="my-8 flex w-min flex-row items-baseline gap-6">
-  <a class="no-underline" href="/"
-    ><h3 class="w-max text-blue">Ethan Denny</h3></a
+<div class="mb-6 mt-5 md:mt-8">
+  <nav
+    class="mb-5 flex w-min flex-wrap items-baseline gap-2 md:flex-nowrap md:gap-6"
   >
-  {
-    navButtons.map(({ label, link }) => (
-      <NavButton active={currentPath === link} link={link}>
-        {label}
-      </NavButton>
-    ))
-  }
-</nav>
+    <a class="mb-2 no-underline" href="/"
+      ><h3 class="w-max text-black">ETHAN DENNY</h3></a
+    >
+    {
+      navButtons.map(({ label, link }) => (
+        <NavButton active={currentPath === link} link={link}>
+          {label}
+        </NavButton>
+      ))
+    }
+  </nav>
+  <hr />
+</div>

@@ -3,7 +3,9 @@ const { active, link } = Astro.props;
 ---
 
 <a class="no-underline" href={link}>
-  <h5 class={`nav-link ${active ? "active" : ""}`}>
+  <span
+    class={`nav-link text-lg md:text-2xl font-bold ${active ? "active" : ""}`}
+  >
     <slot />
-  </h5>
+  </span>
 </a>

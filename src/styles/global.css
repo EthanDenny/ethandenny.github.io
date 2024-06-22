@@ -70,8 +70,25 @@
   }
 
   .nav-link {
-    @apply text-blue hover:text-orange;
+    @apply text-black hover:text-orange;
     @apply transition-colors;
     @apply w-max;
+  }
+
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4,
+  .post-content h5,
+  .post-content h6 {
+    @apply my-6;
+  }
+
+  .post-content p {
+    @apply mb-4;
+  }
+
+  .post-content img {
+    @apply mx-auto;
   }
 }

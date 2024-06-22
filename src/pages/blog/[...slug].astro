@@ -17,18 +17,20 @@ const { entry }: any = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<html>
+<html lang="en">
   <head>
     <BaseHead title={entry.data.title} />
   </head>
-  <body>
-    <div class="flex flex-col items-center">
+  <body class="px-4">
+    <div class="mx-auto max-w-[768px]">
       <Header />
-      <div class="prose">
-        <h1>{entry.data.title}</h1>
-        <p class="text-left w-full">
-          Written on: {entry.data.date.toLocaleDateString("en-ca")}
-        </p>
+      <div class="mb-6 w-full text-3xl font-bold md:mt-8 md:text-5xl">
+        {entry.data.title}
+      </div>
+      <div class="mb-6 w-full text-left text-lg">
+        Written: {entry.data.date.toLocaleDateString("en-ca")}
+      </div>
+      <div class="post-content mb-8">
         <Content />
       </div>
     </div>

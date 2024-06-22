@@ -12,7 +12,7 @@ The premise of Connections is simple: given 16 words, select groups of four tile
 
 Connections' more popular cousin, Wordle, has a fairly well-defined problem space. Its the word list and order of answers are known, and the required information to solve the puzzle is presented to the player. Connections, on the other hand, relies more on nuance than linguistic probabilities. How could I extract these underlying similarities, and connect groups which ultimately solve the puzzle?
 
-## Initial Approach
+### Initial Approach
 
 [Word2Vec](https://en.wikipedia.org/wiki/Word2vec) is a decade-old form of NLP that models words as many-dimensional vectors. It's definitely nowhere near state-of-the-art, but it's got nice library support and provided me with a useful measurement, the distance between vectors as an approximation of the similarity between words, that I could exploit to get something up and running quickly. My language of choice, at least initially, was Go. There wasn't any reason I went with Go in particular, I just wanted more experience with it and wondered how well it might be able to solve the problem. Spoiler: not well.
 
