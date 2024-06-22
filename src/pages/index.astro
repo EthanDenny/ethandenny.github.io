@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewTab from "../components/NewTab.astro";
 
+import "../styles/global.css";
+
 const softwareLink = "https://github.com/EthanDenny";
 const musicLink =
   "https://music.apple.com/ca/playlist/ten-really-good-songs/pl.u-V9D7mX9hBKWDNE7";
@@ -17,7 +19,7 @@ const sideJobLink =
   "https://www.linkedin.com/posts/ethan-denny-709_im-happy-to-share-that-in-addition-to-my-activity-7200540631662772224-JMbU?utm_source=share&utm_medium=member_desktop";
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title={"Home"}>
   <p>
     I like building <NewTab href={softwareLink}>software</NewTab>, listening to <NewTab
       href={musicLink}>music</NewTab
@@ -27,6 +29,7 @@ const sideJobLink =
       >web development</NewTab
     >.
   </p>
+  <br />
   <p>
     Right now, I'm a co-op software developer at <NewTab href={workLink}
       >Avalon Holographics</NewTab

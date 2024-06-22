@@ -1,0 +1,9 @@
+---
+const { active, link } = Astro.props;
+---
+
+<a class="no-underline" href={link}>
+  <h5 class={`nav-link ${active ? "active" : ""}`}>
+    <slot />
+  </h5>
+</a>

@@ -3,30 +3,75 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    @apply h-full w-full;
+    @apply m-0 p-0;
+  }
+
   body {
     @apply bg-white;
-    padding: 0 8rem 8rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-black;
+  }
+
+  h1 {
+    @apply text-6xl;
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply text-5xl;
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+
+  h4 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+
+  h5 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+
+  h6 {
+    @apply text-xl;
+    @apply font-bold;
+  }
+
+  p {
+    @apply text-lg;
+    @apply text-black;
+  }
+
+  a {
+    @apply text-orange;
+    @apply underline;
   }
 }
 
 @layer components {
-  .prose,
-  .link {
-    font-size: 32px;
+  .active {
+    @apply text-orange !important;
   }
-  .prose {
-    @apply text-black;
-    font-weight: 450;
-    width: 100%;
-    max-width: 768px;
-  }
-  .prose > p {
-    @apply mb-6 md:mb-8;
-    @apply text-justify;
-  }
-  .prose > * > a,
-  .link {
-    @apply text-red;
-    text-decoration: underline;
+
+  .nav-link {
+    @apply text-blue hover:text-orange;
+    @apply transition-colors;
+    @apply w-max;
   }
 }

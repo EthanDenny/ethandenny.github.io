@@ -1,34 +1,40 @@
 ---
+import NavButton from "../components/NavButton.astro";
+
 import "../styles/global.css";
-import "../styles/header.css";
 
 const navButtons = [
   {
-    label: "PROJECTS",
-    icon: "fa-solid fa-screwdriver-wrench",
-    link: "/projects",
+    label: "Home",
+    link: "/",
   },
   {
-    label: "BLOG",
-    icon: "fa-solid fa-pen",
+    label: "Blog",
     link: "/blog",
   },
   {
-    label: "CONTACT",
-    icon: "fa-solid fa-comment",
+    label: "Projects",
+    link: "/projects",
+  },
+  {
+    label: "Contact",
     link: "/contact",
   },
 ];
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = "/" + pathname.slice(1);
 ---
 
-<a class="name-text" href="/">Ethan Denny</a>
-<div class="nav-button-container">
+<nav class="my-8 flex w-min flex-row items-baseline gap-6">
+  <a class="no-underline" href="/"
+    ><h3 class="w-max text-blue">Ethan Denny</h3></a
+  >
   {
-    navButtons.map(({ label, icon, link }) => (
-      <a class="nav-button" href={link}>
-        <i class={`nav-button-icon ${icon}`} />
-        <span class="nav-button-text">{label}</span>
-      </a>
+    navButtons.map(({ label, link }) => (
+      <NavButton active={currentPath === link} link={link}>
+        {label}
+      </NavButton>
     ))
   }
-</div>
+</nav>

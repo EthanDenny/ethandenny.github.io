@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     colors: {
-      white: "#f5f1ea",
-      pink: "#f9a3aa",
-      red: "#f5576c",
-      green: "#004953",
-      blue: "#0f282f",
-      black: "#070d0d",
+      white: "#f6f4f1",
+      grey: "#e2e4e7",
+      black: "#0a0d0f",
+      blue: "#0a2538",
+      orange: "#e84a2e",
+      tan: "#e2cc9c",
     },
     fontFamily: {
-      sans: ["Familjen Grotesk", "sans-serif"],
+      sans: ["Verdana", "sans-serif"],
     },
     extend: {},
   },
