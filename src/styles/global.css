@@ -5,12 +5,12 @@
 @layer base {
   html,
   body {
-    @apply h-full w-full;
     @apply m-0 p-0;
   }
 
   body {
-    @apply bg-white;
+    @apply bg-white dark:bg-black;
+    @apply transition-colors;
   }
 
   h1,
@@ -19,8 +19,10 @@
   h4,
   h5,
   h6,
-  p {
-    @apply text-black;
+  p,
+  i,
+  hr {
+    @apply text-black dark:text-white;
   }
 
   h1 {
@@ -55,7 +57,6 @@
 
   p {
     @apply text-lg;
-    @apply text-black;
   }
 
   a {
@@ -70,8 +71,7 @@
   }
 
   .nav-link {
-    @apply text-black hover:text-orange;
-    @apply transition-colors;
+    @apply text-black hover:text-orange dark:text-white;
     @apply w-max;
   }
 
@@ -90,5 +90,12 @@
 
   .post-content img {
     @apply mx-auto;
+  }
+
+  .dark-mode-btn {
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    scale: 2.5;
   }
 }

@@ -16,10 +16,6 @@ const navButtons = [
     label: "Projects",
     link: "/projects",
   },
-  {
-    label: "Contact",
-    link: "/contact",
-  },
 ];
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -30,9 +26,7 @@ const currentPath = "/" + pathname.slice(1);
   <nav
     class="mb-5 flex w-min flex-wrap items-baseline gap-2 md:flex-nowrap md:gap-6"
   >
-    <a class="mb-2 no-underline" href="/"
-      ><h3 class="w-max text-black">ETHAN DENNY</h3></a
-    >
+    <a class="mb-2 no-underline" href="/"><h3 class="w-max">ETHAN DENNY</h3></a>
     {
       navButtons.map(({ label, link }) => (
         <NavButton active={currentPath === link} link={link}>
