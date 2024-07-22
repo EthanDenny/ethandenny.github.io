@@ -15,16 +15,19 @@ import projects from "../data/projects.json";
       <div class="mb-6">
         <h6 class="mb-6">{year}</h6>
         <>
-          {links.map(({ name, description, link, wip }) => (
-            <div class="prose mt-4">
-              <ListItem>
-                <a href={link} rel="noopener noreferrer">
-                  {wip ? `${name} (work in progress)` : name}
-                </a>
-              </ListItem>
-              <p class="ml-8" set:html={description} />
-            </div>
-          ))}
+          {links.map(
+            ({ name, description, link, wip, hidden }) =>
+              !hidden && (
+                <div class="prose mt-4">
+                  <ListItem>
+                    <a href={link} rel="noopener noreferrer">
+                      {wip ? `${name} (work in progress)` : name}
+                    </a>
+                  </ListItem>
+                  <p class="ml-8" set:html={description} />
+                </div>
+              )
+          )}
         </>
       </div>
     ))
