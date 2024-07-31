@@ -90,7 +90,6 @@
   .post-content h5,
   .post-content h6 {
     @apply my-6;
-    @apply dark:text-orange;
   }
 
   .post-content p {

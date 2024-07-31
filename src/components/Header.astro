@@ -19,21 +19,23 @@ const navButtons = [
 ];
 
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = "/" + pathname.slice(1);
+const firstIndex = pathname.slice(1).indexOf("/");
+const parentPath =
+  firstIndex == -1 ? pathname : pathname.slice(0, firstIndex + 1);
 ---
 
 <div class="mb-6 mt-5 md:mt-8">
   <nav
-    class="mb-5 flex w-min flex-wrap items-baseline gap-2 md:flex-nowrap md:gap-6"
+    class="mb-4 flex w-min flex-wrap items-baseline gap-2 md:flex-nowrap md:gap-6"
   >
     <a class="mb-2 no-underline" href="/"><h3 class="w-max">ETHAN DENNY</h3></a>
     {
       navButtons.map(({ label, link }) => (
-        <NavButton active={currentPath === link} link={link}>
+        <NavButton active={parentPath === link} link={link}>
           {label}
         </NavButton>
       ))
     }
   </nav>
-  <hr />
+  <hr class="text-orange" />
 </div>
