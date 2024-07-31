@@ -2,12 +2,12 @@
 title: "React Concepts I Wish I Understood A Year Ago"
 date: "July 31, 2024"
 slug: react-concepts-i-wish-i-understood
-draft: true
+draft: false
 ---
 
-You might have noticed that a lot of people use React. If you haven't noticed, you might not be interested in web dev, and that's okay! For a long time, I wasn't interested either. A big part of that was how intimidating it felt. If you inspect the source of most modern websites, it's an incomprehensible mass of `<div>`'s, which can feel intimidating to beginners - how do you get from `<p>` to something like [The New York Times](https://www.nytimes.com/)?
+You might have noticed that many, many people use React. If you haven't noticed, you might not be interested in web dev, and that's okay! For a long time, I wasn't interested either. A big part of that was how intimidating it felt. If you inspect the source of most modern websites, it's an incomprehensible mass of `<div>`'s, which can feel intimidating to beginners - how do you get from `<p>Hello World</p>` to something like [The New York Times](https://www.nytimes.com/)?
 
-It's easy to put together a stylish site using basic HTML elements and a layer of CSS (maybe you even add a dash of JavaScript to keep things fun). But that's not going to get you a web app, is it? Something is missing. Before my web dev journey began, I heard people talk about React, but I didn't get it. I originally interpreted React as something similar to JQuery, where you write HTML, and then write JavaScript that can modify it. It wasn't really an attractive option - working in two different "domains", if you will. But I was wrong, I was glad I was wrong, and I'll tell you how I was wrong. Obviously, this post is meant for people who feel / felt similarly to me, and will be focused more on ideas than code. There are better React tutorials out there than what I could write, so I'll leave the teaching to them.
+It's easy to put together a stylish site using basic HTML elements and a layer of CSS (maybe you even add a dash of JavaScript to keep things fun). But that won't get you a web app, will it? Something is missing. Before my web dev journey began, I heard people talk about React, but I didn't get it. I originally interpreted React as something similar to JQuery, where you write HTML, and then write JavaScript that can change it. It wasn't an attractive option - working in two different "domains" felt wrong. But I was wrong, I was glad I was wrong, and I'll tell you how I was wrong. Obviously, this post is meant for people who feel / felt similarly to me, and will focus more on ideas than code. There are better React tutorials out there than what I could write, so I'll leave the teaching to them.
 
 ### Okay, but what is React though?
 
@@ -17,7 +17,7 @@ Depending on who you ask, React is a "library", a "framework", or "the best / wo
 - Components
 - Rendering and state
 
-I'll assume you don't know anything about React, but know the basics of HTML, JS, and CSS. The only thing you need to know right now is that React will have an `App` function that works a bit like `main` in other programming languages:
+I'll assume you know nothing about React, but know the basics of HTML, JS, and CSS. The only thing you need to know right now is that React will have an `App` function that works a bit like `main` in other programming languages:
 
 ### JSX
 
@@ -40,7 +40,7 @@ const App = () => {
 And while that might seem convenient, what happens if we'd like to say "hello" in several different languages? We might try an approach like the one below:
 
 ```tsx
-import { getLocalizedGreeting } from "fake-libary";
+import { getLocalizedGreeting } from "fake-library";
 
 const App = () => {
   const greeting = getLocalizedGreeting();
@@ -52,7 +52,7 @@ const App = () => {
 This isn't ideal, since we need to build up our page as a massive string, which will get messy fast. Thankfully, the folks working on React invented **JSX** to help make things easier:
 
 ```tsx
-import { getLocalizedGreeting } from "fake-libary";
+import { getLocalizedGreeting } from "fake-library";
 
 const App = () => {
   const greeting = getLocalizedGreeting();
@@ -71,7 +71,7 @@ How does this work? React uses `.jsx` / `.tsx` files, which are regular JavaScri
 - But be careful: Sometimes attributes have different names, like `onclick` versus `onClick`. Not everything is the same as HTML!
 
 ```tsx
-import { getLocalizedGreeting, isLoggedIn, askForPassword } from "fake-libary";
+import { getLocalizedGreeting, isLoggedIn, askForPassword } from "fake-library";
 
 const App = () => {
   const greeting = getLocalizedGreeting();
@@ -83,7 +83,7 @@ const App = () => {
 
       <p>{loggedIn ? "You are already logged in." : "Please login:"}</p>
 
-      {loggedIn && <button onClick={askForPassword}>Log In</button>}
+      {!loggedIn && <button onClick={askForPassword}>Log In</button>}
     </>
   );
 };
@@ -131,8 +131,8 @@ const App = () => {
       </h1>
 
       <ul>
-        <Contact name="Email" details="mailto:foo@bar.biz">
-        <Contact name="Phone" details="1-555-867-5409">
+        <Contact name="Email" details="mailto:foo@bar.biz" />
+        <Contact name="Phone" details="1-555-867-5409" />
       </ul>
     </>
   );
@@ -155,7 +155,7 @@ const Contact = ({name, details}: ContactProps) => {
 };
 ```
 
-Beautiful! That's all you have to know to start using components in React. Components are useful anytime you need to duplicate behaviour (like here, where all of our `<a>` tags needed to be wrapped in `<li>` tags, and where we might want to apply some shared styles later). They're also valuable for keeping code seperate - a header is unlikely to appear in multiple places on a single-page application, but it's behaviour can be abstracted away and managed, which is still useful.
+Beautiful! That's all you have to know to use components in React. Components are useful anytime you need to duplicate behaviour (like here, where all of our `<a>` tags needed to be wrapped in `<li>` tags, and where we might want to apply some shared styles later). They're also valuable for keeping code seperate - a header is unlikely to appear in multiple places on a single-page application, but it's behaviour can be abstracted away and managed, which is still useful.
 
 ### Rendering and State
 
@@ -181,16 +181,14 @@ const App = () => {
 
 Whenever React calls `App`, we call that a "render". React is a "reactive" library, so it only updates when it gets a user input, or an event isterner fires, etc. These events can then trigger a "re-render", which update the affected component and their children by calling them again.
 
-Unfortunately, that means an approach relying on regular JavaScript variables (like `let count = 0;`) won't work, because the variables will have their value reset every time we re-render. Additionally, that means we'd have to constantly tell React to re-render. Not ideal!
+Unfortunately, that means an approach relying on regular JavaScript variables (like `let count = 0;`) won't work, because the variables will have their value reset every time we re-render. That also means we'd constantly have to tell React to re-render. Not ideal!
 
 But React has tools that can help. `useState` is a "hook" (more on those later) that gives you two things:
 
 1. A constant (in this case, `count`) that represents the _current_ "state" of the variable.
 2. A function (in this case, `setCount`) that we can pass a new value. Whenever we do this, it will trigger a re-render, and the next time the component renders / the function is called, `count` will have the new value we passed.
 
-So, in this case `setCount(count + 1)` is similar to `count++` in the world of regular JavaScript. The rest of the code then becomes simple - we can read `count` knowing it will always reflect the most current state value.
-
-Except, it doesn't always. State has one tiny kink - since `count` is constant and updating it requires a re-render, the state won't change until the next render. Consider this example:
+So, in this case `setCount(count + 1)` is like `count++` in the world of regular JavaScript. The rest of the code then becomes simple: we can read `count` knowing it will reflect the most current state value. However, it doesn't always do that. State has one tiny kink - since `count` is constant and updating it requires a re-render, the state won't change until the next render. Consider this example:
 
 ```tsx
 import { useState } from "react";
@@ -198,9 +196,10 @@ import { useState } from "react";
 const App = () => {
   const [count, setCount] = useState(0);
 
-  // This won't work!!
   const updateCount = () => {
     setCount(count + 1);
+
+    // This won't work as expected!
     console.log(`New count value: {count}`);
   };
 
