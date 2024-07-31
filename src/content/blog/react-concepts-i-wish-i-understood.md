@@ -2,6 +2,7 @@
 title: "React Concepts I Wish I Understood A Year Ago"
 date: "July 31, 2024"
 slug: react-concepts-i-wish-i-understood
+draft: true
 ---
 
 You might have noticed that a lot of people use React. If you haven't noticed, you might not be interested in web dev, and that's okay! For a long time, I wasn't interested either. A big part of that was how intimidating it felt. If you inspect the source of most modern websites, it's an incomprehensible mass of `<div>`'s, which can feel intimidating to beginners - how do you get from `<p>` to something like [The New York Times](https://www.nytimes.com/)?
