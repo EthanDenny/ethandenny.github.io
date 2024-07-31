@@ -21,6 +21,7 @@
   h6,
   p,
   i,
+  li,
   hr {
     @apply text-black dark:text-white;
   }
@@ -63,6 +64,13 @@
     @apply text-orange;
     @apply underline;
   }
+
+  li {
+    @apply mb-4;
+    @apply ml-4;
+    @apply list-disc;
+    @apply text-lg;
+  }
 }
 
 @layer components {
@@ -82,6 +90,7 @@
   .post-content h5,
   .post-content h6 {
     @apply my-6;
+    @apply dark:text-orange;
   }
 
   .post-content p {
@@ -92,10 +101,8 @@
     @apply mx-auto;
   }
 
-  .dark-mode-btn {
-    position: fixed;
-    right: 3rem;
-    bottom: 3rem;
-    scale: 2.5;
+  .post-content pre:has(> code) {
+    @apply p-3;
+    @apply mb-4;
   }
 }

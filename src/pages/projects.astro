@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ListItem from "../components/ListItem.astro";
 
 import projects from "../data/projects.json";
 ---
@@ -18,12 +17,12 @@ import projects from "../data/projects.json";
           {links.map(
             ({ name, description, link, wip, hidden }) =>
               !hidden && (
-                <div class="prose mt-4">
-                  <ListItem>
+                <div class="mt-4">
+                  <li>
                     <a href={link} rel="noopener noreferrer">
                       {wip ? `${name} (work in progress)` : name}
                     </a>
-                  </ListItem>
+                  </li>
                   <p class="ml-8" set:html={description} />
                 </div>
               )

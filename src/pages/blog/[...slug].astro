@@ -17,6 +17,25 @@ const { entry }: any = Astro.props;
 const { Content } = await entry.render();
 ---
 
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
+
 <html lang="en">
   <head>
     <BaseHead title={entry.data.title} />
@@ -24,12 +43,12 @@ const { Content } = await entry.render();
   <body class="px-4">
     <div class="mx-auto max-w-[768px]">
       <Header />
-      <div class="mb-6 w-full text-3xl font-bold md:mt-8 md:text-5xl">
+      <h2 class="mb-6 md:mt-8 dark:text-orange">
         {entry.data.title}
-      </div>
-      <div class="mb-6 w-full text-left text-lg">
-        Written: {entry.data.date}
-      </div>
+      </h2>
+      <p class="stext-left mb-6 w-full text-lg">
+        Published: {entry.data.date}
+      </p>
       <div class="post-content mb-8">
         <Content />
       </div>
