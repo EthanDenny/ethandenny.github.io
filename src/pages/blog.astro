@@ -15,9 +15,7 @@ const blogEntries = await getCollection("blog");
       .filter(({ data }) => !data.draft)
       .map((entry: any) => (
         <li>
-          <span class="font-bold text-black dark:text-white">
-            {entry.data.date}:{" "}
-          </span>
+          <span class="font-bold text-black">{entry.data.date}: </span>
           <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
         </li>
       ))

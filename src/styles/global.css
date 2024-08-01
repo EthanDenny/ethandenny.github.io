@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-black;
+    @apply bg-white;
     @apply transition-colors;
   }
 
@@ -23,7 +23,7 @@
   i,
   li,
   hr {
-    @apply text-black dark:text-white;
+    @apply text-black;
   }
 
   h1 {
@@ -79,7 +79,7 @@
   }
 
   .nav-link {
-    @apply text-black hover:text-orange dark:text-white;
+    @apply text-black hover:text-orange;
     @apply w-max;
   }
 
