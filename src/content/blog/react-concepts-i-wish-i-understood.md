@@ -183,7 +183,7 @@ Whenever React calls `App`, we call that a "render". React is a "reactive" libra
 
 Unfortunately, that means an approach relying on regular JavaScript variables (like `let count = 0;`) won't work, because the variables will have their value reset every time we re-render. That also means we'd constantly have to tell React to re-render. Not ideal!
 
-But React has tools that can help. `useState` is a "hook" (more on those later) that gives you two things:
+But React has tools that can help. `useState` is a "hook" that gives you two things:
 
 1. A constant (in this case, `count`) that represents the _current_ "state" of the variable.
 2. A function (in this case, `setCount`) that we can pass a new value. Whenever we do this, it will trigger a re-render, and the next time the component renders / the function is called, `count` will have the new value we passed.
