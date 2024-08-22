@@ -8,14 +8,15 @@ const softwareLink = "https://github.com/EthanDenny";
 const musicLink =
   "https://music.apple.com/ca/playlist/ten-really-good-songs/pl.u-V9D7mX9hBKWDNE7";
 const gamesLink = "https://steamcommunity.com/id/thedenny709";
-const programmingLink = "https://github.com/EthanDenny/yap";
-const mathLink =
+const programmingLink = "https://github.com/EthanDenny/flip";
+const visualComputingLink =
   "https://github.com/EthanDenny/visual-computing-course-project";
 const webDevLink = "https://github.com/EthanDenny/do-it-hackathon";
 
-const workLink = "https://www.avalonholographics.com/";
 const schoolLink = "https://www.mun.ca/";
-const sideJobLink =
+const vacLabLink =
+  "https://www.linkedin.com/posts/ethan-denny-709_machinelearning-computerscience-python-activity-7071956327891095552-Awnm";
+const ffRustLink =
   "https://www.linkedin.com/posts/ethan-denny-709_im-happy-to-share-that-in-addition-to-my-activity-7200540631662772224-JMbU?utm_source=share&utm_medium=member_desktop";
 
 import contacts from "../data/contacts.json";
@@ -27,25 +28,22 @@ import contacts from "../data/contacts.json";
       href={musicLink}>music</NewTab
     >, playing <NewTab href={gamesLink}>games</NewTab>, and learning about <NewTab
       href={programmingLink}>programming languages</NewTab
-    >, <NewTab href={mathLink}>math</NewTab>, and <NewTab href={webDevLink}
-      >web development</NewTab
+    >, <NewTab href={visualComputingLink}>visual computing</NewTab>, and <NewTab
+      href={webDevLink}>web development</NewTab
     >.
   </p>
   <br />
   <p>
-    Right now, I'm a co-op software developer at <NewTab href={workLink}
-      >Avalon Holographics</NewTab
-    >, and I'm completing my bachelor's degree in computer science at <NewTab
+    Right now, I'm working on my bachelor's degree in computer science at <NewTab
       href={schoolLink}>Memorial University of Newfoundland and Labrador</NewTab
-    >, where I'm working on <NewTab href={sideJobLink}
-      >cryptographic research</NewTab
-    >.
+    >, where I've worked on research related to <NewTab href={vacLabLink}
+      >visual computing</NewTab
+    > and <NewTab href={ffRustLink}>cryptography</NewTab>.
   </p>
   <br />
+  <p>I'd love to chat. Reach out to me at any of these places!</p>
+  <br />
   <div class="flex flex-col">
-    <p class="mb-4">
-      I'd love to chat. Reach out to me at any of these places!
-    </p>
     {
       contacts.map(({ name, icon, link }) => (
         <div>
