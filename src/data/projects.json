@@ -3,6 +3,13 @@
     "year": 2024,
     "links": [
         {
+          "name": "xkcd bot",
+          "description": "Summon xkcd comics directly to your eyeballs in the form of Discord messages",
+          "link": "https://github.com/EthanDenny/xkcd-bot",
+          "wip": false,
+          "hidden": false
+        },
+        {
           "name": "Connections",
           "description": "Solving the NYT game \"Connections\" with machine learning",
           "link": "/blog/solving-connections",
