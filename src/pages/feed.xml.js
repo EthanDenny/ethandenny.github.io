@@ -8,17 +8,20 @@ export async function GET(context) {
   const blog = await getCollection("blog");
 
   return rss({
-    title: "Ethan Denny's Blog",
+    title: "Ethan Denny",
     description: "Writing about my projects and the things I learn",
     site: context.site,
-    items: blog.map((post) => ({
-      link: `/blog/${post.slug}/`,
-
-      content: sanitizeHtml(parser.render(post.body), {
+    items: blog.map((post) => {
+      const content = sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-      }),
+      });
 
-      ...post.data,
-    })),
+      return {
+        link: `/blog/${post.slug}/`,
+        description: content,
+        content,
+        ...post.data,
+      };
+    }),
   });
 }
