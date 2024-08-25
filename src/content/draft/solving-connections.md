@@ -1,6 +1,6 @@
 ---
 title: 'Solving "Connections" with machine learning'
-date: "June 2, 2024"
+pubDate: "June 2, 2024"
 slug: solving-connections
 ---
 

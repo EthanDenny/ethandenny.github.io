@@ -1,6 +1,6 @@
 ---
 title: "React Concepts I Wish I Understood A Year Ago"
-date: "July 31, 2024"
+pubDate: "July 31, 2024"
 slug: react-concepts-i-wish-i-understood-a-year-ago
 ---
 

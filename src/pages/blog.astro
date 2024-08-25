@@ -11,12 +11,11 @@ const blogEntries = await getCollection("blog");
     then you'll find it here!
   </p>
   {
-    blogEntries
-      .map((entry: any) => (
-        <li>
-          <span class="font-bold text-black">{entry.data.date}: </span>
-          <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
-        </li>
-      ))
+    blogEntries.map((entry: any) => (
+      <li>
+        <span class="font-bold text-black">{entry.data.pubDate}: </span>
+        <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
+      </li>
+    ))
   }
 </BaseLayout>

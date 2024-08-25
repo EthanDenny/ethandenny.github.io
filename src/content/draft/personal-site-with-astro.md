@@ -1,6 +1,6 @@
 ---
 title: "Building My Personal Site With Astro"
-date: "June 22, 2024"
+pubDate: "June 22, 2024"
 slug: personal-site-with-astro
 ---
 

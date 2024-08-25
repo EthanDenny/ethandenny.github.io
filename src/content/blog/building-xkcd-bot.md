@@ -1,6 +1,6 @@
 ---
 title: "Delivering Comics To Eyeballs: Building A Discord Bot To Fetch XKCD Comics"
-date: "August 24, 2024"
+pubDate: "August 24, 2024"
 slug: building-xkcd-bot
 ---
 
