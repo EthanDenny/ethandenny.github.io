@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.8.2",
     "@astrojs/preact": "^3.5.1",
+    "@astrojs/rss": "^4.0.7",
     "@astrojs/tailwind": "^5.1.0",
     "@jsdevtools/rehype-url-inspector": "^2.0.2",
     "@types/react": "^18.3.3",
