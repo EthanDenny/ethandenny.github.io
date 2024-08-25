@@ -1,20 +1,29 @@
 ---
 import { getCollection } from "astro:content";
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
+import type { AnyEntryMap } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 
-import "../../styles/global.css";
+import "../styles/global.css";
 
-export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry: any) => ({
-    params: { slug: entry.slug },
+const getEntries = async (collection: keyof AnyEntryMap) => {
+  const blogEntries = await getCollection(collection);
+  return blogEntries.map((entry) => ({
+    params: { slug: collection + "/" + entry.slug },
     props: { entry },
   }));
+};
+
+export async function getStaticPaths() {
+  const blogEntries = await getEntries("blog");
+  const draftEntries = await getEntries("draft");
+
+  return [...blogEntries, ...draftEntries];
 }
 
 const { entry }: any = Astro.props;
 const { Content } = await entry.render();
+const postData = entry.data;
 ---
 
 <script>
@@ -33,7 +42,7 @@ const { Content } = await entry.render();
 
 <html lang="en">
   <head>
-    <BaseHead title={entry.data.title} />
+    <BaseHead title={postData.title} />
   </head>
   <body class="px-4">
     <div class="fixed left-0 top-0 h-1 w-full">
@@ -42,10 +51,10 @@ const { Content } = await entry.render();
     <div class="mx-auto max-w-[768px]">
       <Header />
       <h2 class="mb-6 md:mt-8">
-        {entry.data.title}
+        {postData.title}
       </h2>
       <p class="stext-left mb-6 w-full text-lg">
-        Published: {entry.data.date}
+        Published: {postData.date}
       </p>
       <div class="post-content mb-8">
         <Content />

@@ -12,7 +12,6 @@ const blogEntries = await getCollection("blog");
   </p>
   {
     blogEntries
-      .filter(({ data }) => !data.draft)
       .map((entry: any) => (
         <li>
           <span class="font-bold text-black">{entry.data.date}: </span>

@@ -2,7 +2,6 @@
 title: 'Solving "Connections" with machine learning'
 date: "June 2, 2024"
 slug: solving-connections
-draft: true
 ---
 
 I've always been a big fan of the New York Times word games. Their most famous offering is undoubtedly Wordle, but their other puzzles are also extremely creative. A current favourite is [Connections](https://www.nytimes.com/games/connections):

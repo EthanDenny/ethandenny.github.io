@@ -2,7 +2,6 @@
 title: "Delivering Comics To Eyeballs: Building A Discord Bot To Fetch XKCD Comics"
 date: "August 24, 2024"
 slug: building-xkcd-bot
-draft: false
 ---
 
 Sometimes project ideas come from unexpected places. Last Tuesday, I was part of a discussion about the new [uv](https://github.com/astral-sh/uv) Python packager that led to this message (remarking on the development of yet another solution for Python packaging):
