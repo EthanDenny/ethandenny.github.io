@@ -8,8 +8,8 @@ import "../styles/global.css";
 
 export async function getStaticPaths() {
   const getEntries = async (collection: keyof AnyEntryMap) => {
-    const blogEntries = await getCollection(collection);
-    return blogEntries.map((entry) => ({
+    const entries = await getCollection(collection);
+    return entries.map((entry) => ({
       params: { slug: collection + "/" + entry.slug },
       props: { entry },
     }));
