@@ -1,26 +1,7 @@
 ---
 import NavButton from "../components/NavButton.astro";
-
+import navButtons from "../data/navButtons.json";
 import "../styles/global.css";
-
-const navButtons = [
-  {
-    label: "Home",
-    link: "/",
-  },
-  {
-    label: "Blog",
-    link: "/blog",
-  },
-  {
-    label: "Projects",
-    link: "/projects",
-  },
-  {
-    label: "Resume",
-    link: "/resume",
-  },
-];
 
 const pathname = new URL(Astro.request.url).pathname;
 const firstIndex = pathname.slice(1).indexOf("/");

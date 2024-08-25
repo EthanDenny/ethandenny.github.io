@@ -2,63 +2,63 @@
   {
     "year": 2024,
     "links": [
-        {
-          "name": "xkcd bot",
-          "description": "Summon xkcd comics directly to your eyeballs in the form of Discord messages",
-          "link": "https://github.com/EthanDenny/xkcd-bot",
-          "wip": false,
-          "hidden": false
-        },
-        {
-          "name": "Connections",
-          "description": "Solving the NYT game \"Connections\" with machine learning",
-          "link": "/blog/solving-connections",
-          "wip": true,
-          "hidden": true
-        },
-        {
-          "name": "My personal site",
-          "description": "Where you are right now!",
-          "link": "https://github.com/EthanDenny/personal-site",
-          "wip": false,
-          "hidden": false
-        },
-        {
-          "name": "Connect2",
-          "description": "My team's submission for the Don't Overthink It Hackathon",
-          "link": "https://github.com/EthanDenny/do-it-hackathon",
-          "wip": false,
-          "hidden": false
-        },
-        {
-          "name": "Finance Tracker",
-          "description": "Personal replacement for tools like YNAB, Mint, etc.",
-          "link": "https://github.com/EthanDenny/finance-tracker",
-          "wip": true,
-          "hidden": false
-        },
-        {
-          "name": "Pixelz",
-          "description": "A prototype falling-sand game in the style of things like The Powder Toy, Sandspiel, and Noita",
-          "link": "https://github.com/EthanDenny/pixelz",
-          "wip": false,
-          "hidden": false
-        },
-        {
-          "name": "Yap",
-          "description": "A LISP written in Go for fun",
-          "link": "https://github.com/EthanDenny/yap",
-          "wip": false,
-          "hidden": false
-        },
-        {
-          "name": "Flip",
-          "description": "A programming language inspired by functional programming and Lisp",
-          "link": "https://github.com/EthanDenny/flip",
-          "wip": false,
-          "hidden": false
-        }
-      ]
+      {
+        "name": "xkcd bot",
+        "description": "Summon xkcd comics directly to your eyeballs in the form of Discord messages",
+        "link": "https://github.com/EthanDenny/xkcd-bot",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Connections",
+        "description": "Solving the NYT game \"Connections\" with machine learning",
+        "link": "/blog/solving-connections",
+        "wip": true,
+        "hidden": true
+      },
+      {
+        "name": "My personal site",
+        "description": "Where you are right now!",
+        "link": "https://github.com/EthanDenny/personal-site",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Connect2",
+        "description": "My team's submission for the Don't Overthink It Hackathon",
+        "link": "https://github.com/EthanDenny/do-it-hackathon",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Finance Tracker",
+        "description": "Personal replacement for tools like YNAB, Mint, etc.",
+        "link": "https://github.com/EthanDenny/finance-tracker",
+        "wip": true,
+        "hidden": false
+      },
+      {
+        "name": "Pixelz",
+        "description": "A prototype falling-sand game in the style of things like The Powder Toy, Sandspiel, and Noita",
+        "link": "https://github.com/EthanDenny/pixelz",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Yap",
+        "description": "A LISP written in Go for fun",
+        "link": "https://github.com/EthanDenny/yap",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Flip",
+        "description": "A programming language inspired by functional programming and Lisp",
+        "link": "https://github.com/EthanDenny/flip",
+        "wip": false,
+        "hidden": false
+      }
+    ]
   },
   {
     "year": 2023,
