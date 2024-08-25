@@ -8,6 +8,10 @@ export async function GET(context) {
     title: "Ethan Denny's Blog",
     description: "Writing about my projects and the things I learn",
     site: context.site,
-    items: blog.map(({ data }) => data),
+    items: blog.map((post) => ({
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      link: `/blog/${post.slug}/`,
+    })),
   });
 }

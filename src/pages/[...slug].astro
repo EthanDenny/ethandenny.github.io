@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   const getEntries = async (collection: keyof AnyEntryMap) => {
     const entries = await getCollection(collection);
     return entries.map((entry) => ({
-      params: { slug: collection + "/" + entry.slug },
+      params: { slug: `${collection}/${entry.slug}` },
       props: { entry },
     }));
   };
