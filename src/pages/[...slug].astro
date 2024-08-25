@@ -6,15 +6,15 @@ import Header from "../components/Header.astro";
 
 import "../styles/global.css";
 
-const getEntries = async (collection: keyof AnyEntryMap) => {
-  const blogEntries = await getCollection(collection);
-  return blogEntries.map((entry) => ({
-    params: { slug: collection + "/" + entry.slug },
-    props: { entry },
-  }));
-};
-
 export async function getStaticPaths() {
+  const getEntries = async (collection: keyof AnyEntryMap) => {
+    const blogEntries = await getCollection(collection);
+    return blogEntries.map((entry) => ({
+      params: { slug: collection + "/" + entry.slug },
+      props: { entry },
+    }));
+  };
+
   const blogEntries = await getEntries("blog");
   const draftEntries = await getEntries("draft");
 
