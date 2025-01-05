@@ -5,29 +5,24 @@ import projects from "../data/projects.json";
 ---
 
 <BaseLayout title="Projects">
-  <p class="mb-6">
-    I like to make things; here's some of my favourites. Links go to a blog post
-    if I've written about it, or directly to the repo if not.
-  </p>
+  <p class="mb-6">I like to make things; here's some of my favourites:</p>
   {
     projects.map(({ year, links }) => (
       <div class="mb-6">
         <h6 class="mb-6">{year}</h6>
-        <>
-          {links.map(
-            ({ name, description, link, wip, hidden }) =>
-              !hidden && (
-                <div class="mt-4">
-                  <li>
-                    <a href={link} rel="noopener noreferrer">
-                      {wip ? `${name} (work in progress)` : name}
-                    </a>
-                  </li>
-                  <p class="ml-8" set:html={description} />
-                </div>
-              )
-          )}
-        </>
+        {links.map(
+          ({ name, description, link, wip, hidden }) =>
+            !hidden && (
+              <div class="mt-4">
+                <li>
+                  <a href={link} rel="noopener noreferrer">
+                    {wip ? `${name} (work in progress)` : name}
+                  </a>
+                </li>
+                <p class="ml-8" set:html={description} />
+              </div>
+            )
+        )}
       </div>
     ))
   }

@@ -1,7 +1,40 @@
 [
   {
+    "year": 2025,
+    "links": [
+      {
+        "name": "Undergratuate Honours Work",
+        "description": "Researching applications of augemented-reality sandboxes to physics and climate education",
+        "link": "https://github.com/EthanDenny/sandbox",
+        "wip": true,
+        "hidden": false
+      },
+      {
+        "name": "Unsolver",
+        "description": "Take any number and \"unsolve\" it by turning it into a custom equation",
+        "link": "https://github.com/EthanDenny/unsolver",
+        "wip": true,
+        "hidden": false
+      }
+    ]
+  },
+  {
     "year": 2024,
     "links": [
+      {
+        "name": "Bubblegum Bloodbath",
+        "description": "Course project for COMP 4300: Game Programming",
+        "link": "https://www.youtube.com/watch?v=APVTMvT-CXE",
+        "wip": false,
+        "hidden": false
+      },
+      {
+        "name": "Car Rental Agency Demo",
+        "description": "Course project for COMP 4754: Database Systems",
+        "link": "https://github.com/hamoodev/comp4754",
+        "wip": false,
+        "hidden": false
+      },
       {
         "name": "xkcd bot",
         "description": "Summon xkcd comics directly to your eyeballs in the form of Discord messages",
@@ -35,7 +68,7 @@
         "description": "Personal replacement for tools like YNAB, Mint, etc.",
         "link": "https://github.com/EthanDenny/finance-tracker",
         "wip": true,
-        "hidden": false
+        "hidden": true
       },
       {
         "name": "Pixelz",
@@ -96,7 +129,7 @@
         "description": "Remake of the game \"Spelunky Classic\" in Lua using the LÖVE game engine and the Concord ECS library ",
         "link": "https://github.com/EthanDenny/spelunky-classic-lua",
         "wip": true,
-        "hidden": false
+        "hidden": true
       },
       {
         "name": "Can't Stop",
