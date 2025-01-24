@@ -2,4 +2,6 @@
 const { href } = Astro.props;
 ---
 
-<a href={href} target="_blank" rel="noopener noreferrer"> <slot /></a>
+<a href={href} target="_blank" rel="noopener noreferrer" class="text-lg">
+  <slot />
+</a>

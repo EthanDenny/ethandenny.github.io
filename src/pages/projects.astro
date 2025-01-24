@@ -1,29 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import "../styles/global.css";
+
 import projects from "../data/projects.json";
 ---
 
 <BaseLayout title="Projects">
-  <p class="mb-6">I like to make things; here's some of my favourites:</p>
-  {
-    projects.map(({ year, links }) => (
-      <div class="mb-6">
-        <h6 class="mb-6">{year}</h6>
-        {links.map(
-          ({ name, description, link, wip, hidden }) =>
-            !hidden && (
-              <div class="mt-4">
-                <li>
-                  <a href={link} rel="noopener noreferrer">
-                    {wip ? `${name} (work in progress)` : name}
-                  </a>
-                </li>
-                <p class="ml-8" set:html={description} />
-              </div>
-            )
-        )}
-      </div>
-    ))
-  }
+  <div class="mb-8 flex flex-col gap-6">
+    <div class="text-block">
+      I like to make things; here's some of my favourites:
+    </div>
+    {
+      projects.map(({ year, links }) => (
+        <div>
+          <h5 class="mb-4">{year}</h5>
+          {links.map(
+            ({ name, description, link, wip, hidden }) =>
+              !hidden && (
+                <div class="mt-4">
+                  <li>
+                    <a href={link} rel="noopener noreferrer">
+                      {wip ? `${name} (work in progress)` : name}
+                    </a>
+                  </li>
+                  <p class="text-block ml-8" set:html={description} />
+                </div>
+              )
+          )}
+        </div>
+      ))
+    }
+  </div>
 </BaseLayout>

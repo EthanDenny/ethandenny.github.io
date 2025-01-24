@@ -22,35 +22,41 @@ import contacts from "../data/contacts.json";
 ---
 
 <BaseLayout title={"Home"}>
-  <p>
-    I like building <NewTab href={softwareLink}>software</NewTab>, listening to <NewTab
-      href={musicLink}>music</NewTab
-    >, playing <NewTab href={gamesLink}>games</NewTab>, and learning about <NewTab
-      href={webDevLink}>web development</NewTab
-    > and <NewTab href={programmingLink}>programming languages</NewTab>.
-  </p>
-  <br />
-  <p>
-    Right now, I'm pursuing my bachelor's degree in computer science at <NewTab
-      href={schoolLink}>Memorial University of Newfoundland and Labrador</NewTab
-    >, where I'm working on research related to <NewTab href={sandboxLink}
-      >physics, climate, and education</NewTab
-    >. Previously, I've also contributed to research on <NewTab
-      href={ffRustLink}>cryptography</NewTab
-    > and
-    <NewTab href={vacLabLink}>visual computing</NewTab>.
-  </p>
-  <br />
-  <p>I'd love to chat. Reach out to me at any of these places!</p>
-  <br />
-  <div class="flex flex-col">
-    {
-      contacts.map(({ name, icon, link }) => (
-        <div>
-          <i class={`${icon} mr-4`} />
-          <NewTab href={link}>{name}</NewTab>
-        </div>
-      ))
-    }
+  <div class="flex flex-col gap-4">
+    <div class="text-block">
+      I like building <NewTab href={softwareLink}>software</NewTab>, listening
+      to <NewTab href={musicLink}>music</NewTab>, playing <NewTab
+        href={gamesLink}>games</NewTab
+      >, and learning about <NewTab href={webDevLink}>web development</NewTab> and
+      <NewTab href={programmingLink}>programming languages</NewTab>.
+    </div>
+    <div class="text-block">
+      Right now, I'm pursuing my bachelor's degree in computer science at <NewTab
+        href={schoolLink}
+        >Memorial University of Newfoundland and Labrador</NewTab
+      >, where I'm working on research related to <NewTab href={sandboxLink}
+        >physics, climate, and education</NewTab
+      >. Previously, I've also contributed to research on <NewTab
+        href={ffRustLink}>cryptography</NewTab
+      > and
+      <NewTab href={vacLabLink}>visual computing</NewTab>.
+    </div>
+    <div class="text-block">
+      I'd love to chat. Reach out to me at any of these places!
+    </div>
+    <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-0">
+      {
+        contacts.map(({ name, icon, link }) => (
+          <>
+            <i
+              class={`${icon} flex items-center justify-center text-center leading-none`}
+            />
+            <div>
+              <NewTab href={link}>{name}</NewTab>
+            </div>
+          </>
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>

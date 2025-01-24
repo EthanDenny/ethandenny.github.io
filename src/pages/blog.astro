@@ -2,23 +2,29 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import "../styles/global.css";
+
 const blogEntries = await getCollection("blog");
 ---
 
 <BaseLayout title="Blog">
-  <p class="mb-4">
-    Sometimes I write about the stuff I like, if that's what you're looking for,
-    then you'll find it here!
-  </p>
-  <p class="mb-6">
-    You can also read this blog as an <a href="/feed.xml">RSS feed!</a>
-  </p>
-  {
-    blogEntries.map((entry: any) => (
-      <li>
-        <span class="font-bold text-black">{entry.data.pubDate}: </span>
-        <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
-      </li>
-    ))
-  }
+  <div class="flex flex-col gap-4">
+    <div class="text-block">
+      Sometimes I write about the stuff I like, if that's what you're looking
+      for, then you'll find it here!
+    </div>
+    <div class="text-block">
+      You can also read this blog as an <a href="/feed.xml">RSS feed!</a>
+    </div>
+    <div>
+      {
+        blogEntries.map((entry: any) => (
+          <li>
+            <span class="font-bold text-black">{entry.data.pubDate}: </span>
+            <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
+          </li>
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>
