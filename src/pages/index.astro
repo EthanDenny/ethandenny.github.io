@@ -4,13 +4,12 @@ import NewTab from "../components/NewTab.astro";
 
 import "../styles/global.css";
 
-const softwareLink = "https://github.com/EthanDenny";
 const musicLink =
   "https://music.apple.com/ca/playlist/ten-really-good-songs/pl.u-V9D7mX9hBKWDNE7";
 const gamesLink = "https://steamcommunity.com/id/thedenny709";
-const programmingLink = "https://github.com/EthanDenny/flip";
-const webDevLink = "https://github.com/EthanDenny/connect2";
+const githubLink = "https://github.com/EthanDenny/";
 
+const workLink = "https://www.spellbook.legal/";
 const schoolLink = "https://www.mun.ca/";
 const sandboxLink = "https://github.com/EthanDenny/sandbox";
 const vacLabLink =
@@ -24,22 +23,24 @@ import contacts from "../data/contacts.json";
 <BaseLayout title={"Home"}>
   <div class="flex flex-col gap-4">
     <div class="text-block">
-      I like building <NewTab href={softwareLink}>software</NewTab>, listening
-      to <NewTab href={musicLink}>music</NewTab>, playing <NewTab
-        href={gamesLink}>games</NewTab
-      >, and learning about <NewTab href={webDevLink}>web development</NewTab> and
-      <NewTab href={programmingLink}>programming languages</NewTab>.
+      {"I like"}
+      <NewTab href={githubLink}>building software</NewTab>{", listening to"}
+      <NewTab href={musicLink}>music</NewTab>{", playing"}
+      <NewTab href={gamesLink}>games</NewTab>{"."}
     </div>
     <div class="text-block">
-      Right now, I'm pursuing my bachelor's degree in computer science at <NewTab
-        href={schoolLink}
-        >Memorial University of Newfoundland and Labrador</NewTab
-      >, where I'm working on research related to <NewTab href={sandboxLink}
-        >physics, climate, and education</NewTab
-      >. Previously, I've also contributed to research on <NewTab
-        href={ffRustLink}>cryptography</NewTab
-      > and
-      <NewTab href={vacLabLink}>visual computing</NewTab>.
+      {"Right now, I'm building AI for lawyers as a software developer at"}
+      <NewTab href={workLink}>Spellbook</NewTab>{
+        ". I'm also pursuing my bachelor's degree in computer science at"
+      }
+      <NewTab href={schoolLink}>MUN</NewTab>{
+        ", where I've working on research related to"
+      }
+      <NewTab href={sandboxLink}>physics, climate, and education</NewTab>{
+        " and contributed to research on"
+      }
+      <NewTab href={ffRustLink}>cryptography</NewTab>{" and"}
+      <NewTab href={vacLabLink}>visual computing</NewTab>{"."}
     </div>
     <div class="text-block">
       I'd love to chat. Reach out to me at any of these places!

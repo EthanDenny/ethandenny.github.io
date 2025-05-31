@@ -1,22 +1,22 @@
 [
   {
     "name": "me@ethandenny.dev",
-    "icon": "fa-solid fa-envelope",
+    "icon": "ph ph-envelope",
     "link": "mailto:me@ethandenny.dev"
   },
   {
     "name": "Resume",
-    "icon": "fa-solid fa-file",
+    "icon": "ph ph-file",
     "link": "https://ethandenny.dev/resume"
   },
   {
     "name": "Github",
-    "icon": "fa-brands fa-github",
+    "icon": "ph ph-github-logo",
     "link": "https://github.com/EthanDenny"
   },
   {
     "name": "LinkedIn",
-    "icon": "fa-brands fa-linkedin",
+    "icon": "ph ph-linkedin-logo",
     "link": "https://www.linkedin.com/in/ethan-denny-709/"
   }
 ]
