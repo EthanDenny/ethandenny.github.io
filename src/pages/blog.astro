@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import "../styles/global.css";
@@ -8,23 +8,15 @@ const blogEntries = await getCollection("blog");
 ---
 
 <BaseLayout title="Blog">
-  <div class="flex flex-col gap-4">
-    <div class="text-block">
-      Sometimes I write about the stuff I like, if that's what you're looking
-      for, then you'll find it here!
-    </div>
-    <div class="text-block">
-      You can also read this blog as an <a href="/feed.xml">RSS feed!</a>
-    </div>
-    <div>
+  <div class="flex flex-col gap-8">
+    
       {
-        blogEntries.map((entry: any) => (
-          <li>
-            <span class="font-bold text-black">{entry.data.pubDate}: </span>
-            <a href={"/blog/" + entry.slug}>{entry.data.title}</a>
-          </li>
+        blogEntries.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).map((entry) => (
+          <div class="flex flex-col gap-2">
+            <h5><a href={"/blog/" + entry.slug}>{entry.data.title}</a></h5>
+            <span class="font-bold text-black">{entry.data.pubDate}</span>
+          </div>
         ))
-      }
-    </div>
+      }    
   </div>
 </BaseLayout>
