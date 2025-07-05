@@ -3,6 +3,13 @@
     "year": 2025,
     "links": [
       {
+        "name": "To Boldly Go Where None Have Gone Before",
+        "description": "Course project for COMP 4304: Data Visualization",
+        "link": "https://github.com/EthanDenny/to-boldly-go",
+        "wip": false,
+        "hidden": false
+      },
+      {
         "name": "Undergratuate Honours Work",
         "description": "Researching applications of augemented-reality sandboxes to physics and climate education",
         "link": "https://github.com/EthanDenny/sandbox",
