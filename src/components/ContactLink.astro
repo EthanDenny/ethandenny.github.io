@@ -1,0 +1,12 @@
+---
+import NewTab from "./NewTab.astro";
+
+const { icon: Icon, href, label } = Astro.props;
+---
+
+<div class="flex h-full w-5 items-end pb-0.75">
+  <Icon class="size-5" />
+</div>
+<div>
+  <NewTab href={href}>{label}</NewTab>
+</div>

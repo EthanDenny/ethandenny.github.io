@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewTab from "../components/NewTab.astro";
+import ContactLink from "../components/ContactLink.astro";
+import EnvelopeIcon from "phosphor-astro/Envelope.astro";
+import FileIcon from "phosphor-astro/File.astro";
+import GithubIcon from "phosphor-astro/GithubLogo.astro";
+import LinkedInIcon from "phosphor-astro/LinkedinLogo.astro";
 
 import "../styles/global.css";
 
@@ -16,8 +21,6 @@ const vacLabLink =
   "https://www.linkedin.com/posts/ethan-denny-709_machinelearning-computerscience-python-activity-7071956327891095552-Awnm";
 const ffRustLink =
   "https://www.linkedin.com/posts/ethan-denny-709_im-happy-to-share-that-in-addition-to-my-activity-7200540631662772224-JMbU?utm_source=share&utm_medium=member_desktop";
-
-import contacts from "../data/contacts.json";
 ---
 
 <BaseLayout title={"Home"}>
@@ -45,19 +48,27 @@ import contacts from "../data/contacts.json";
     <div class="text-block">
       I'd love to chat. Reach out to me at any of these places!
     </div>
-    <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-0">
-      {
-        contacts.map(({ name, icon, link }) => (
-          <>
-            <i
-              class={`${icon} flex items-center justify-center text-center leading-none`}
-            />
-            <div>
-              <NewTab href={link}>{name}</NewTab>
-            </div>
-          </>
-        ))
-      }
+    <div class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0">
+      <ContactLink
+        icon={EnvelopeIcon}
+        href="mailto:me@ethandenny.dev"
+        label="me@ethandenny.dev"
+      />
+      <ContactLink
+        icon={FileIcon}
+        href="https://ethandenny.dev/resume"
+        label="Resume"
+      />
+      <ContactLink
+        icon={GithubIcon}
+        href="https://github.com/EthanDenny"
+        label="Github"
+      />
+      <ContactLink
+        icon={LinkedInIcon}
+        href="https://www.linkedin.com/in/ethan-denny-709/"
+        label="LinkedIn"
+      />
     </div>
   </div>
 </BaseLayout>
