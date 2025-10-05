@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-white: #f6f4f1;
+  --color-black: #0a0d0f;
+  --color-orange: #e84a2e;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
 
 @layer base {
   html,
@@ -77,7 +82,7 @@
 
 @layer components {
   .active {
-    @apply text-orange !important;
+    @apply text-orange;
   }
 
   .nav-link {
