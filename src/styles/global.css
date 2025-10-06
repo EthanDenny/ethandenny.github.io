@@ -1,10 +1,23 @@
 @import "tailwindcss";
 
+@custom-variant default (&:where(.theme-default, .theme-default *));
+@custom-variant dark (&:where(.theme-dark, .theme-dark *));
+@custom-variant pink (&:where(.theme-pink, .theme-pink *));
+
 @theme {
-  --color-white: #f6f4f1;
-  --color-black: #0a0d0f;
-  --color-orange: #e84a2e;
-  --font-family-sans: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --color-default-text: #000000;
+  --color-default-background: #ffffff;
+  --color-default-accent: #0000ff;
+
+  --color-dark-text: #ffffff;
+  --color-dark-background: #000000;
+  --color-dark-accent: var(--color-orange-500);
+
+  --color-pink-text: var(--color-pink-400);
+  --color-pink-background: var(--color-pink-50);
+  --color-pink-accent: var(--color-pink-800);
+
+  --font-family-sans: helvetica, sans-serif;
 }
 
 @layer base {
@@ -14,7 +27,9 @@
   }
 
   body {
-    @apply bg-white;
+    @apply default:bg-default-background;
+    @apply dark:bg-dark-background;
+    @apply pink:bg-pink-background;
     @apply transition-colors;
   }
 
@@ -27,9 +42,16 @@
   i,
   li,
   hr,
-  p,
-  .text-block {
-    @apply text-black;
+  p {
+    @apply default:text-default-text;
+    @apply dark:text-dark-text;
+    @apply pink:text-pink-text;
+  }
+
+  a {
+    @apply default:text-default-accent;
+    @apply dark:text-dark-accent;
+    @apply pink:text-pink-accent;
   }
 
   h1 {
@@ -68,28 +90,16 @@
   }
 
   a {
-    @apply text-orange;
     @apply underline;
   }
 
   li {
-    @apply mb-4;
     @apply ml-4;
     @apply list-disc;
-    @apply text-lg;
   }
 }
 
 @layer components {
-  .active {
-    @apply text-orange;
-  }
-
-  .nav-link {
-    @apply text-black hover:text-orange;
-    @apply w-max;
-  }
-
   .post-content h1,
   .post-content h2,
   .post-content h3,

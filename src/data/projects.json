@@ -13,7 +13,7 @@
         "name": "Undergratuate Honours Work",
         "description": "Researching applications of augemented-reality sandboxes to physics and climate education",
         "link": "https://github.com/EthanDenny/sandbox",
-        "wip": true,
+        "wip": false,
         "hidden": false
       },
       {
