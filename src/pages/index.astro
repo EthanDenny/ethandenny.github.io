@@ -16,34 +16,13 @@ const vacLabLink =
 const ffRustLink =
   "https://www.linkedin.com/posts/ethan-denny-709_im-happy-to-share-that-in-addition-to-my-activity-7200540631662772224-JMbU?utm_source=share&utm_medium=member_desktop";
 
-const friends = [
-  { name: "Hailey Kinsella", href: "https://haileykinsella.wordpress.com/" },
-  { name: "Natalie Cashin", href: "https://ncashin.dev", spellbook: true },
-  {
-    name: "Mitchell Hynes",
-    href: "https://mitchellhynes.com/",
-    spellbook: true,
-  },
-  { name: "Jack Harrhy", href: "https://jackharrhy.dev", spellbook: true },
-  { name: "Ethan Crann", href: "https://ecrann.dev/" },
-  { name: "Evan Whalen", href: "https://evaan.dev/" },
-  { name: "Daniel Power", href: "https://danielpower.ca/" },
-];
-
-const usefulLinks = [
-  {
-    name: "Computer Technology Society of Newfoundland and Labrador (CTS-NL)",
-    href: "https://ctsnl.ca/",
-  },
-  {
-    name: "Hacker News",
-    href: "https://news.ycombinator.com/",
-  },
-];
+import favouriteMusic from "../data/music.json";
+import friends from "../data/friends.json";
+import usefulLinks from "../data/usefulLinks.json";
 ---
 
 <BaseLayout title={"Home"}>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 text-lg">
     <p>
       {"I like building"}
       <a href={githubLink}>software</a>{", listening to"}
@@ -66,13 +45,23 @@ const usefulLinks = [
       for professionals.
     </p>
     <p class="flex flex-col gap-4">
-      My site is minimal, but you can change the colour scheme!
+      This site is intentionally minimal, but you can change the colour scheme!
       <div class="flex gap-4">
         <ThemeButton theme="default" />
         <ThemeButton theme="dark" />
         <ThemeButton theme="pink" />
       </div>
     </p>
+    <p>Some of my favourite music right now:</p>
+    <div class="flex flex-wrap gap-4">
+      {
+        favouriteMusic.map(({ name, artist, link, cover }) => (
+          <a href={link} title={`"${name}" by ${artist}`}>
+            <img class="w-48" src={cover} alt={name} />
+          </a>
+        ))
+      }
+    </div>
     <div class="flex flex-col gap-2">
       <p>Some of my friends also have websites:</p>
       <ul class="flex flex-col text-lg">

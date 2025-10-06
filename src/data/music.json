@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Brat",
+    "artist": "Charli XCX",
+    "link": "https://music.apple.com/us/album/brat/1739079974",
+    "cover": "https://upload.wikimedia.org/wikipedia/commons/6/60/Charli_XCX_-_Brat_%28album_cover%29.png"
+  },
+  {
+    "name": "Random Access Memories",
+    "artist": "Daft Punk",
+    "link": "https://music.apple.com/us/album/random-access-memories/617154241",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/2/26/Daft_Punk_-_Random_Access_Memories.png"
+  },
+  {
+    "name": "Let God Sort Em Out",
+    "artist": "Clipse",
+    "link": "https://music.apple.com/us/album/let-god-sort-em-out/1816313639",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/8/8d/Let_God_Sort_Em_Out.jpg"
+  }
+]
