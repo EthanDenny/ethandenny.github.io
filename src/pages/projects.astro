@@ -18,8 +18,9 @@ import projects from "../data/projects.json";
                 <div class="mt-4 flex flex-col gap-2">
                   <li>
                     <a href={link} rel="noopener noreferrer">
-                      {wip ? `${name} (work in progress)` : name}
+                      {name}
                     </a>
+                    {wip && <span>(work in progress)</span>}
                   </li>
                   <p class="text-block ml-8" set:html={description} />
                 </div>
