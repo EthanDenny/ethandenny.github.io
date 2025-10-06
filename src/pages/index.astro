@@ -52,18 +52,20 @@ import usefulLinks from "../data/usefulLinks.json";
         <ThemeButton theme="pink" />
       </div>
     </p>
-    <p>Some of my favourite music right now:</p>
-    <div class="flex flex-wrap gap-4">
-      {
-        favouriteMusic.map(({ name, artist, link, cover }) => (
-          <a href={link} title={`"${name}" by ${artist}`}>
-            <img class="w-48" src={cover} alt={name} />
-          </a>
-        ))
-      }
-    </div>
-    <div class="flex flex-col gap-2">
-      <p>Some of my friends also have websites:</p>
+    <p>
+      Some of my favourite music right now:
+      <div class="flex flex-wrap gap-4">
+        {
+          favouriteMusic.map(({ name, artist, link, cover }) => (
+            <a href={link} title={`"${name}" by ${artist}`}>
+              <img class="w-48" src={cover} alt={name} />
+            </a>
+          ))
+        }
+      </div>
+    </p>
+    <p class="flex flex-col gap-2">
+      <span>Some of my friends also have websites:</span>
       <ul class="flex flex-col text-lg">
         {
           friends.map(({ name, href, spellbook }) => (
@@ -76,9 +78,11 @@ import usefulLinks from "../data/usefulLinks.json";
           ))
         }
       </ul>
-    </div>
-    <div class="flex flex-col gap-2">
-      <p>And finally, some links I often visit that you might find useful:</p>
+    </p>
+    <p class="flex flex-col gap-2">
+      <span
+        >And finally, some links I often visit that you might find useful:</span
+      >
       <ul class="flex flex-col text-lg">
         {
           usefulLinks.map(({ name, href }) => (
@@ -88,6 +92,6 @@ import usefulLinks from "../data/usefulLinks.json";
           ))
         }
       </ul>
-    </div>
+    </p>
   </div>
 </BaseLayout>
