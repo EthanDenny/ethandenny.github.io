@@ -13,6 +13,7 @@ redir /demo-night /demo-night/ 308
 
 # Proxy /demo-night/ to demo-night.fly.dev
 handle /demo-night/* {
+	uri strip_prefix /demo-night
 	reverse_proxy https://demo-night.fly.dev {
 		header_up Host demo-night.fly.dev
 		header_up X-Real-IP {remote_host}
@@ -23,13 +24,6 @@ handle /demo-night/* {
 		transport http {
 			tls_server_name demo-night.fly.dev
 		}
-		# Rewrite redirect URLs to keep them under /demo-night/
-		replace_response Location https://demo-night.fly.dev/ /demo-night/
-		replace_response Location http://demo-night.fly.dev/ /demo-night/
-		# Handle cookies - rewrite cookie paths from / to /demo-night/
-		header_down Set-Cookie {
-			regexp_replace Path=/ Path=/demo-night/
-		}
 	}
 }
 
@@ -38,4 +32,3 @@ handle {
 	file_server
 	try_files {path} {path}/ =404
 }
-
