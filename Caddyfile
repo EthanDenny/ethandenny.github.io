@@ -1,0 +1,41 @@
+:80
+
+root * /usr/share/caddy
+
+# Cache headers for Astro assets
+handle /_astro/* {
+	header Cache-Control "public, immutable, max-age=31536000"
+	file_server
+}
+
+# Normalize /demo-night -> /demo-night/
+redir /demo-night /demo-night/ 308
+
+# Proxy /demo-night/ to demo-night.fly.dev
+handle /demo-night/* {
+	reverse_proxy https://demo-night.fly.dev {
+		header_up Host demo-night.fly.dev
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-Prefix /demo-night
+		transport http {
+			tls_server_name demo-night.fly.dev
+		}
+		# Rewrite redirect URLs to keep them under /demo-night/
+		replace_response Location https://demo-night.fly.dev/ /demo-night/
+		replace_response Location http://demo-night.fly.dev/ /demo-night/
+		# Handle cookies - rewrite cookie paths from / to /demo-night/
+		header_down Set-Cookie {
+			regexp_replace Path=/ Path=/demo-night/
+		}
+	}
+}
+
+# Default file server for all other routes
+handle {
+	file_server
+	try_files {path} {path}/ =404
+}
+

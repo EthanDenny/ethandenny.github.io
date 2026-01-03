@@ -33,16 +33,15 @@ RUN npm run build
 # Remove development dependencies
 RUN npm prune --omit=dev
 
-
 # Final stage for app image
-FROM nginx
+FROM caddy:2-alpine
 
 # Copy built application
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/caddy
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 80
-CMD [ "/usr/sbin/nginx", "-g", "daemon off;" ]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
