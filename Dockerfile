@@ -40,6 +40,9 @@ FROM nginx
 # Copy built application
 COPY --from=build /app/dist /usr/share/nginx/html
 
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 80
 CMD [ "/usr/sbin/nginx", "-g", "daemon off;" ]
